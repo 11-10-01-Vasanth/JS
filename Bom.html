@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+        // Getting the size of the browser window
+let width = window.innerWidth;
+let height = window.innerHeight;
+console.log(`Window size: ${width}x${height}`);
+
+// Displaying an alert box
+window.alert('This is an alert box!');
+
+// Confirm box
+let userConfirmed = window.confirm('Do you want to proceed?');
+if (userConfirmed) {
+    console.log('User clicked OK');
+} else {
+    console.log('User clicked Cancel');
+}
+
+// Prompt box
+let userInput = window.prompt('Please enter your name:');
+if (userInput !== null) {
+    console.log(`Hello, ${userInput}!`);
+}
+
+// Navigating to a new URL
+// window.location.href = 'https://www.example.com';
+
+// Getting and setting cookies
+document.cookie = `username=${userInput}`;
+let cookies = document.cookie;
+console.log(`Cookies: ${cookies}`);
+
+    </script>
+    </body>
+</html>

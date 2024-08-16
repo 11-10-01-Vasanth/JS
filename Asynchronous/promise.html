@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="html"></div>
+        <div id="html1"></div>
+        <script>
+            
+        // Promise
+        // 1 pending....
+        // 2 fulfilled....
+        // 3 rejected....
+
+        let promise = new Promise((resolve, reject) => {
+        let x = 2;
+        if (x == 1) {
+          resolve("Success");
+        } else {
+          reject("Failed");
+        }
+        });
+
+        promise
+          .then((response) => {
+            console.log("THEN",response);
+            showhtml(response);
+          })
+          .catch((error) => {
+            console.log("CATCH",error);
+            showhtml(error);
+          });
+
+        function showhtml(html) {
+          document.getElementById("html").innerHTML = html;
+        }
+
+      
+
+        let promise2 = new Promise((resolve,reject) => {
+            setTimeout(()=>{
+                resolve("Hiii")
+            }, 3000)
+        })
+
+        promise2.then((response) => {
+            document.getElementById("html1").innerHTML = response
+        })
+
+    </script>
+    </body>
+</html>

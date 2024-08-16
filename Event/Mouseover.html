@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mouseover Event Example</title>
+    <style>
+        #hoverDiv {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+    <script>
+        function handleMouseOver() {
+            document.getElementById('hoverDiv').style.backgroundColor = 'lightgreen';
+            document.getElementById('hoverDiv').style.cursor = 'pointer';
+            document.getElementById('hoverDiv').style.width = '500px';
+        }
+        function handleMouseOut() {
+            document.getElementById('hoverDiv').style.backgroundColor = 'lightblue';
+            document.getElementById('hoverDiv').style.width = '200px';
+        }
+    </script>
+</head>
+<body>
+    <div id="hoverDiv" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()">
+        Hover over me
+    </div>
+</body>
+</html>

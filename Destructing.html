@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Objects Example</title>
+    <script>
+        // Creating an object using object literal syntax
+        let person = {
+            firstName: "John",
+            lastName: "Doe",
+            age: 30,
+            // Object method to get the full name
+            fullName: function() {
+                return this.firstName + " " + this.lastName;
+            },
+            // Object method to greet
+            greet: function() {
+                console.log("Hello, my name is " + this.fullName());
+            }
+        };
+
+        // Using object methods
+        console.log(person.fullName());  // Output: John Doe
+        person.greet();  // Output: Hello, my name is John Doe
+
+        // Destructuring the object
+        let { firstName, lastName, age } = person;
+        console.log(firstName);  // Output: John
+        console.log(lastName);   // Output: Doe
+        console.log(age);        // Output: 30
+
+        // Destructuring with default value
+        let { firstName: fn, lastName: ln, gender = "Male" } = person;
+        console.log(gender);  // Output: Male
+
+        // Destructuring nested object
+        let complexPerson = {
+            name: {
+                firstName: "Jane",
+                lastName: "Smith"
+            },
+            age: 25
+        };
+
+        let { name: { firstName: fn2, lastName: ln2 }, age: age2 } = complexPerson;
+        console.log(fn2);  // Output: Jane
+        console.log(ln2);  // Output: Smith
+        console.log(age2); // Output: 25
+    </script>
+</head>
+<body>
+</body>
+</html>

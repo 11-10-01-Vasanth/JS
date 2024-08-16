@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation Examples</title>
+</head>
+<body>
+
+    <!-- Elements for demonstration -->
+    <div id="myElement">Original text</div>
+    <div class="myClass">Original class text 1</div>
+    <div class="myClass">Original class text 2</div>
+    <p>Original paragraph 1</p>
+    <p>Original paragraph 2</p>
+    <button id="myButton">Click me</button>
+
+    <!-- Buttons to trigger functions -->
+    <button onclick="changeText()">Change Text by ID</button>
+    <button onclick="changeTextByClass()">Change Text by Class</button>
+    <button onclick="changeAllTexts()">Change All Texts by Class</button>
+    <button onclick="changeParagraphs()">Change All Paragraphs</button>
+    <button onclick="addDiv()">Add New Div</button>
+    <button onclick="removeElement()">Remove Element by ID</button>
+    <button onclick="setAndGetAttribute()">Set and Get Attribute</button>
+    <button onclick="addClickListener()">Add Click Listener</button>
+
+    <script>
+        // getElementById example
+        function changeText() {
+            var element = document.getElementById("myElement");
+            element.innerHTML = "New text!";
+        }
+
+        // querySelector example
+        function changeTextByClass() {
+            var element = document.querySelector(".myClass");
+            element.innerHTML = "New text for first class element!";
+        }
+
+        // getElementsByClassName example
+        function changeAllTexts() {
+            var elements = document.getElementsByClassName("myClass");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].innerHTML = "New text for all!";
+            }
+        }
+
+        // getElementsByTagName example
+        function changeParagraphs() {
+            var paragraphs = document.getElementsByTagName("p");
+            for (var i = 0; i < paragraphs.length; i++) {
+                paragraphs[i].innerHTML = "New paragraph text!";
+            }
+        }
+
+        // createElement and appendChild example
+        function addDiv() {
+            var newDiv = document.createElement("div");
+            newDiv.innerHTML = "I am a new div!";
+            document.body.appendChild(newDiv);
+        }
+
+        // removeChild example
+        function removeElement() {
+            var element = document.getElementById("myElement");
+            if (element) {
+                element.parentNode.removeChild(element);
+            } else {
+                alert("Element not found!");
+            }
+        }
+
+        // setAttribute and getAttribute example
+        function setAndGetAttribute() {
+            var element = document.getElementById("myElement");
+            if (element) {
+                element.setAttribute("data-custom", "customValue");
+                var attribute = element.getAttribute("data-custom");
+                console.log(attribute); // Outputs: customValue
+                alert("Attribute value: " + attribute);
+            } else {
+                alert("Element not found!");
+            }
+        }
+
+        // addEventListener example
+        function addClickListener() {
+            var button = document.getElementById("myButton");
+            button.addEventListener("click", function() {
+                alert("Button clicked!");
+            });
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Examples</title>
+    <script>
+        function redirectToPage() {
+            window.location.href = "https://www.youtube.com";
+        }
+
+        function showAlert() {
+            alert("This is an alert message!");
+        }
+
+        function showPrompt() {
+            var userInput = prompt("Please enter your name:");
+            if (userInput !== null) {
+                console.log("User's name is: " + userInput);
+            }
+        }
+
+        function showConfirmation() {
+            var userConfirmed = confirm("Do you want to proceed?");
+            if (userConfirmed) {
+                console.log("User chose to proceed.");
+            } else {
+                console.log("User chose to cancel.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="redirectToPage()">Redirect to Page</button>
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="showPrompt()">Show Prompt</button>
+    <button onclick="showConfirmation()">Show Confirmation</button>
+</body>
+</html>
